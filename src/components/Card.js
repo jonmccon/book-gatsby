@@ -55,6 +55,7 @@ const Excerpt = styled.p`
   line-height: 1.6;
 `
 
+
 const Card = ({ slug, heroImage, title, publishDate, body, ...props }) => {
   return (
     <Post featured={props.featured}>

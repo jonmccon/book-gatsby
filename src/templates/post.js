@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import Container from '../components/Container'
 import PageBody from '../components/PageBody'
+// import Description from '../components/Description'
 import TagList from '../components/TagList'
 import PostLinks from '../components/PostLinks'
 import PostDate from '../components/PostDate'
@@ -16,6 +17,7 @@ const PostTemplate = ({ data, pageContext }) => {
     title,
     slug,
     heroImage,
+    description,
     body,
     publishDate,
     tags,
@@ -37,6 +39,7 @@ const PostTemplate = ({ data, pageContext }) => {
       <Container>
         {tags && <TagList tags={tags} />}
         <PostDate date={publishDate} />
+        {/* <Description description={description} /> */}
         <PageBody body={body} />
       </Container>
       <PostLinks previous={previous} next={next} />
@@ -72,6 +75,11 @@ export const query = graphql`
           height
         }
       }
+      description {
+        childMarkdownRemark {
+          html
+          }
+        }
       body {
         childMarkdownRemark {
           html
