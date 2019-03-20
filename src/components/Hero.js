@@ -18,7 +18,7 @@ const BgImg = styled(Img)`
     height: ${props => props.height || 'auto'};
   }
   & > img {
-    object-fit: ${props => props.fit || 'cover'} !important;
+    object-fit: ${props => props.fit || 'scale-down'} !important;
     object-position: ${props => props.position || '50% 50%'} !important;
   }
   &::before {

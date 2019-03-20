@@ -6,9 +6,9 @@ import Img from 'gatsby-image'
 const Post = styled.li`
   position: relative;
   border: 1px solid ${props => props.theme.colors.secondary};
-  border-radius: 2px;
+  border-radius: 4px;
   margin: 0 0 1em 0;
-  width: 300px;
+  width: 600px;
   transition: background 0.2s;
   @media screen and (min-width: ${props => props.theme.responsive.small}) {
     flex: ${props => (props.featured ? '0 0 100%' : '0 0 49%')};
@@ -22,26 +22,27 @@ const Post = styled.li`
   }
   a {
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
     height: 100%;
     width: 100%;
     color: ${props => props.theme.colors.base};
     text-decoration: none;
     .gatsby-image-wrapper {
-      height: 0;
-      padding-bottom: 60%;
-      @media screen and (min-width: ${props => props.theme.responsive.small}) {
-        padding-bottom: ${props => (props.featured ? '40%' : '60%')};
+      height: 100px;
+      width: 100px;
+      img {
+        object-fit: ${props => props.fit || 'scale-down'} !important;
       }
     }
   }
 `
 
 const Title = styled.h2`
-  font-size: 1.5em;
-  font-weight: 600;
+  font-family: ${props => props.theme.fonts.mono};
+  font-size: 1em;
+  font-weight: 500;
   text-transform: capitalize;
-  margin: 1rem 1rem 0.5rem 1rem;
+  margin: auto 1rem auto 1rem;
 `
 
 const Date = styled.h3`

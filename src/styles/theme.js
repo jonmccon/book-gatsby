@@ -5,6 +5,10 @@ const theme = {
     tertiary: '#f3f3f3', // Light Gray
     highlight: '#5b8bf7', // Light Blue
   },
+  fonts: {
+    sans: 'system-ui, sans-serif',
+    mono: 'Menlo, monospace',
+  },
   sizes: {
     maxWidth: '1200px',
     maxWidthCentered: '650px',
