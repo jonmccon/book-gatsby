@@ -7,6 +7,7 @@ const Wrapper = styled.section`
   max-width: ${props => props.theme.sizes.maxWidth};
   padding: 3em 1.5em 2em;
   flex-grow: 1;
+  background: #e5e5e5;
 `
 
 const Container = props => {

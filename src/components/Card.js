@@ -8,7 +8,7 @@ const Post = styled.li`
   border: 1px solid ${props => props.theme.colors.secondary};
   border-radius: 2px;
   margin: 0 0 1em 0;
-  width: 100%;
+  width: 300px;
   transition: background 0.2s;
   @media screen and (min-width: ${props => props.theme.responsive.small}) {
     flex: ${props => (props.featured ? '0 0 100%' : '0 0 49%')};
@@ -58,14 +58,14 @@ const Card = ({ slug, heroImage, title, publishDate, body, ...props }) => {
   return (
     <Post featured={props.featured}>
       <Link to={`/${slug}/`}>
-        <Img fluid={heroImage.fluid} backgroundColor={'#eeeeee'} />
+        <Img fluid={heroImage.fluid} backgroundColor={'#ffffff'} />
         <Title>{title}</Title>
-        <Date>{publishDate}</Date>
-        <Excerpt
+        {/* <Date>{publishDate}</Date> */}
+        {/* <Excerpt
           dangerouslySetInnerHTML={{
             __html: body.childMarkdownRemark.excerpt,
           }}
-        />
+        /> */}
       </Link>
     </Post>
   )

@@ -3,9 +3,9 @@ import styled from 'styled-components'
 
 const List = styled.ul`
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 40% auto;
   &::after {
     content: '';
     flex: 0 0 32%;
