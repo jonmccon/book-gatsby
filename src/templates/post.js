@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import Container from '../components/Container'
 import PageBody from '../components/PageBody'
-// import Description from '../components/Description'
+import Description from '../components/Description'
 import TagList from '../components/TagList'
 import PostLinks from '../components/PostLinks'
 import PostDate from '../components/PostDate'
@@ -15,6 +15,7 @@ import SEO from '../components/SEO'
 const PostTemplate = ({ data, pageContext }) => {
   const {
     title,
+    subtitle,
     slug,
     heroImage,
     description,
@@ -26,6 +27,7 @@ const PostTemplate = ({ data, pageContext }) => {
 
   const previous = pageContext.prev
   const next = pageContext.next
+  
 
   return (
     <Layout>
@@ -34,12 +36,15 @@ const PostTemplate = ({ data, pageContext }) => {
       </Helmet>
       <SEO pagePath={slug} postNode={postNode} postSEO />
 
-      {/* <Hero title={title} image={heroImage} height={'50vh'} /> */}
+      
+      <Container>
+      <Hero title={title} subtitle={subtitle} />
+      <Description description={description} />
+      </Container>
 
       <Container>
         {tags && <TagList tags={tags} />}
         <PostDate date={publishDate} />
-        {/* <Description description={description} /> */}
         <PageBody body={body} />
       </Container>
       <PostLinks previous={previous} next={next} />
@@ -51,6 +56,7 @@ export const query = graphql`
   query($slug: String!) {
     contentfulPost(slug: { eq: $slug }) {
       title
+      subtitle
       slug
       metaDescription {
         internal {
