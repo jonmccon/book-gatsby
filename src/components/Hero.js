@@ -8,7 +8,7 @@ const Wrapper = styled.section`
 `
 
 const Title = styled.h1`
-  font-size: 3em;
+  font-size: 3rem;
   text-transform: Uppercase;
   font-weight: 600;
   position: absolute;
@@ -20,7 +20,7 @@ const Title = styled.h1`
   color: white;
 `
 const Subtitle = styled.h1`
-  font-size: 3em;
+  font-size: 3rem;
   text-transform: Uppercase;
   font-weight: 400;
   position: absolute;
